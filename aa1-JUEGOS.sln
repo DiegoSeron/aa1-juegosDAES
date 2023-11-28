@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Juegos.Models", "Models\Juegos.Models.csproj", "{A6141282-A5E3-46F2-BD98-F5EB4918B8F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Juegos.Business", "Business\Juegos.Business.csproj", "{212C7124-B621-4759-9809-4CF0B5A6C99A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Juegos.Presentation", "Presentation\Juegos.Presentation.csproj", "{998CE277-6982-4CED-A173-2DCEF2821031}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A6141282-A5E3-46F2-BD98-F5EB4918B8F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6141282-A5E3-46F2-BD98-F5EB4918B8F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6141282-A5E3-46F2-BD98-F5EB4918B8F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6141282-A5E3-46F2-BD98-F5EB4918B8F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{212C7124-B621-4759-9809-4CF0B5A6C99A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{212C7124-B621-4759-9809-4CF0B5A6C99A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{212C7124-B621-4759-9809-4CF0B5A6C99A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{212C7124-B621-4759-9809-4CF0B5A6C99A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{998CE277-6982-4CED-A173-2DCEF2821031}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{998CE277-6982-4CED-A173-2DCEF2821031}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{998CE277-6982-4CED-A173-2DCEF2821031}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{998CE277-6982-4CED-A173-2DCEF2821031}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
