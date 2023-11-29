@@ -1,0 +1,15 @@
+D:\Diego Seron\aa1-daess\aa1-JUEGOS\Presentation\bin\Debug\net6.0\Juegos.Presentation.exe
+D:\Diego Seron\aa1-daess\aa1-JUEGOS\Presentation\bin\Debug\net6.0\Juegos.Presentation.deps.json
+D:\Diego Seron\aa1-daess\aa1-JUEGOS\Presentation\bin\Debug\net6.0\Juegos.Presentation.runtimeconfig.json
+D:\Diego Seron\aa1-daess\aa1-JUEGOS\Presentation\bin\Debug\net6.0\Juegos.Presentation.dll
+D:\Diego Seron\aa1-daess\aa1-JUEGOS\Presentation\bin\Debug\net6.0\Juegos.Presentation.pdb
+D:\Diego Seron\aa1-daess\aa1-JUEGOS\Presentation\obj\Debug\net6.0\Juegos.Presentation.csproj.AssemblyReference.cache
+D:\Diego Seron\aa1-daess\aa1-JUEGOS\Presentation\obj\Debug\net6.0\Juegos.Presentation.GeneratedMSBuildEditorConfig.editorconfig
+D:\Diego Seron\aa1-daess\aa1-JUEGOS\Presentation\obj\Debug\net6.0\Juegos.Presentation.AssemblyInfoInputs.cache
+D:\Diego Seron\aa1-daess\aa1-JUEGOS\Presentation\obj\Debug\net6.0\Juegos.Presentation.AssemblyInfo.cs
+D:\Diego Seron\aa1-daess\aa1-JUEGOS\Presentation\obj\Debug\net6.0\Juegos.Presentation.csproj.CoreCompileInputs.cache
+D:\Diego Seron\aa1-daess\aa1-JUEGOS\Presentation\obj\Debug\net6.0\Juegos.Presentation.dll
+D:\Diego Seron\aa1-daess\aa1-JUEGOS\Presentation\obj\Debug\net6.0\refint\Juegos.Presentation.dll
+D:\Diego Seron\aa1-daess\aa1-JUEGOS\Presentation\obj\Debug\net6.0\Juegos.Presentation.pdb
+D:\Diego Seron\aa1-daess\aa1-JUEGOS\Presentation\obj\Debug\net6.0\Juegos.Presentation.genruntimeconfig.cache
+D:\Diego Seron\aa1-daess\aa1-JUEGOS\Presentation\obj\Debug\net6.0\ref\Juegos.Presentation.dll

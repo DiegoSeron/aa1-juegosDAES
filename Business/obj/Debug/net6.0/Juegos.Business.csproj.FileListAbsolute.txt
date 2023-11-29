@@ -1,0 +1,12 @@
+D:\Diego Seron\aa1-daess\aa1-JUEGOS\Business\bin\Debug\net6.0\Juegos.Business.deps.json
+D:\Diego Seron\aa1-daess\aa1-JUEGOS\Business\bin\Debug\net6.0\Juegos.Business.dll
+D:\Diego Seron\aa1-daess\aa1-JUEGOS\Business\bin\Debug\net6.0\Juegos.Business.pdb
+D:\Diego Seron\aa1-daess\aa1-JUEGOS\Business\obj\Debug\net6.0\Juegos.Business.csproj.AssemblyReference.cache
+D:\Diego Seron\aa1-daess\aa1-JUEGOS\Business\obj\Debug\net6.0\Juegos.Business.GeneratedMSBuildEditorConfig.editorconfig
+D:\Diego Seron\aa1-daess\aa1-JUEGOS\Business\obj\Debug\net6.0\Juegos.Business.AssemblyInfoInputs.cache
+D:\Diego Seron\aa1-daess\aa1-JUEGOS\Business\obj\Debug\net6.0\Juegos.Business.AssemblyInfo.cs
+D:\Diego Seron\aa1-daess\aa1-JUEGOS\Business\obj\Debug\net6.0\Juegos.Business.csproj.CoreCompileInputs.cache
+D:\Diego Seron\aa1-daess\aa1-JUEGOS\Business\obj\Debug\net6.0\Juegos.Business.dll
+D:\Diego Seron\aa1-daess\aa1-JUEGOS\Business\obj\Debug\net6.0\refint\Juegos.Business.dll
+D:\Diego Seron\aa1-daess\aa1-JUEGOS\Business\obj\Debug\net6.0\Juegos.Business.pdb
+D:\Diego Seron\aa1-daess\aa1-JUEGOS\Business\obj\Debug\net6.0\ref\Juegos.Business.dll
