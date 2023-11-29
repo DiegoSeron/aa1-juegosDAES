@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Diego Seron\\aa1-daess\\aa1-JUEGOS\\Data\\Juegos.Data.csproj": {}
+    "D:\\IvanBadia\\aa1-juegosDAES\\Data\\Juegos.Data.csproj": {}
   },
   "projects": {
-    "D:\\Diego Seron\\aa1-daess\\aa1-JUEGOS\\Data\\Juegos.Data.csproj": {
+    "D:\\IvanBadia\\aa1-juegosDAES\\Data\\Juegos.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Diego Seron\\aa1-daess\\aa1-JUEGOS\\Data\\Juegos.Data.csproj",
+        "projectUniqueName": "D:\\IvanBadia\\aa1-juegosDAES\\Data\\Juegos.Data.csproj",
         "projectName": "Juegos.Data",
-        "projectPath": "D:\\Diego Seron\\aa1-daess\\aa1-JUEGOS\\Data\\Juegos.Data.csproj",
+        "projectPath": "D:\\IvanBadia\\aa1-juegosDAES\\Data\\Juegos.Data.csproj",
         "packagesPath": "C:\\Users\\S2-PC00\\.nuget\\packages\\",
-        "outputPath": "D:\\Diego Seron\\aa1-daess\\aa1-JUEGOS\\Data\\obj\\",
+        "outputPath": "D:\\IvanBadia\\aa1-juegosDAES\\Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
