@@ -1,7 +1,7 @@
 ﻿namespace Juegos.Models;
 public class Clientes
 {
-    protected string Dni { get; set; }
+    public string Dni { get; protected set; }
     protected string Nombre { get; set; }
     protected string Apellido { get; set; }
     protected int Telefono { get; set; }
@@ -23,6 +23,7 @@ public class Clientes
         this.Telefono = Telefono;
         this.FechaNacimiento = FechaNacimiento;
         MakeDeposit(SaldoInicial, DateTime.Now, "Apertura de cuenta. Ingreso inicial");
+
         var user = new Clientes(Dni, Nombre, apellido, Telefono, FechaNacimiento, SaldoInicial);
         listaClientes.Add(user);
 

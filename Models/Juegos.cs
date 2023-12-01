@@ -1,7 +1,7 @@
 namespace Juegos.Models;
 public class Juegos
 {
-    protected int idJuego {get;}
+    public int idJuego {get; protected set;}
     protected string nombreJuego {get; set;}
     protected string categoria {get; set;}
     protected int cantidad {get; set;}
@@ -28,7 +28,11 @@ public class Juegos
         listaJuegos.Add(juego);
     }
 
-    public void addStock(int idJuego, int cantidad){
-        
+    public void addStock(int idJuego, int addCantidad){
+        if (cantidad <= 0)
+        {
+            throw new ArgumentOutOfRangeException(nameof(cantidad), "La cantidad depositada debe ser positiva");
+        }
+        cantidad = cantidad + addCantidad;
     }
 }
