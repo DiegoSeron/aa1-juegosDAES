@@ -1,0 +1,50 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Juegos.Business/1.0.0": {
+        "dependencies": {
+          "Juegos.Data": "1.0.0",
+          "Juegos.Models": "1.0.0"
+        },
+        "runtime": {
+          "Juegos.Business.dll": {}
+        }
+      },
+      "Juegos.Data/1.0.0": {
+        "dependencies": {
+          "Juegos.Models": "1.0.0"
+        },
+        "runtime": {
+          "Juegos.Data.dll": {}
+        }
+      },
+      "Juegos.Models/1.0.0": {
+        "runtime": {
+          "Juegos.Models.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Juegos.Business/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Juegos.Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Juegos.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

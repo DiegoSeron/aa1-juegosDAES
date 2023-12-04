@@ -1,7 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\Business\Juegos.Business.csproj" />
+    <ProjectReference Include="D:\www\aa1-juegosDAES\Business\Juegos.Business.csproj" />
+    <ProjectReference Include="D:\www\aa1-juegosDAES\Data\Juegos.Data.csproj" />
+    <ProjectReference Include="D:\www\aa1-juegosDAES\Models\Juegos.Models.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

@@ -13,7 +13,7 @@ public class Compras
     public Compras(Clientes clientes, Juegos juegos){
         idCompra = idCompraSeed++;
         fechaDeCompra = DateTime.Now;
-        idComprador = clientes.Dni;
-        idJuegoComprado = juegos.idJuego;
+/*         idComprador = clientes.Dni;
+ */        idJuegoComprado = juegos.idJuego;
     }
 }

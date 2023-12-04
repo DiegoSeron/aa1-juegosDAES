@@ -8,24 +8,26 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\diego\\.nuget\\packages\\": {}
+    "C:\\Users\\IVÁN\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "d:\\CLASE\\DAW\\Desarrollo-web-entorno-servidor\\Juegos\\Juegos.csproj",
+      "projectUniqueName": "D:\\www\\aa1-juegosDAES\\Juegos.csproj",
       "projectName": "Juegos",
-      "projectPath": "d:\\CLASE\\DAW\\Desarrollo-web-entorno-servidor\\Juegos\\Juegos.csproj",
-      "packagesPath": "C:\\Users\\diego\\.nuget\\packages\\",
-      "outputPath": "d:\\CLASE\\DAW\\Desarrollo-web-entorno-servidor\\Juegos\\obj\\",
+      "projectPath": "D:\\www\\aa1-juegosDAES\\Juegos.csproj",
+      "packagesPath": "C:\\Users\\IVÁN\\.nuget\\packages\\",
+      "outputPath": "D:\\www\\aa1-juegosDAES\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\diego\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\IVÁN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -59,7 +61,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.417\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }
