@@ -116,8 +116,43 @@ while (running)
 
                         if (clienteLogueado != null)
                         {
-                            Console.WriteLine($"Inicio de sesión exitoso. Bienvenido, {clienteLogueado.Nombre}!");
                             loggedIn = true;
+                            Console.WriteLine($"Inicio de sesión exitoso. Bienvenido, {clienteLogueado.Nombre}!");
+
+                            bool loggedInMenu = true;
+
+                            while (loggedInMenu)
+                            {
+                                Console.WriteLine("Menú del cliente:");
+                                Console.WriteLine("1. Explorar juegos disponibles");
+                                Console.WriteLine("2. Buscar por categoria");
+                                Console.WriteLine("3. Cerrar sesión");
+                                Console.Write("Selecciona una opción: ");
+
+                                string opcionMenuCliente = Console.ReadLine();
+
+                                switch (opcionMenuCliente)
+                                {
+                                    case "1":
+                                        // Lógica para mostrar juegos disponibles
+                                        juegoBusiness.MostrarTodosLosJuegos();
+                                        break;
+                                    case "2":
+                                        Console.WriteLine("Ingrese la categoría de juego que desea buscar:");
+                                        string categoriaBusqueda = Console.ReadLine();
+
+                                        // Lógica para buscar juegos por categoría
+                                        juegoBusiness.BuscarJuegosPorCategoria(categoriaBusqueda); // Implementa esta función según tu lógica
+                                        break;
+                                    case "3":
+                                        Console.WriteLine("Cerrando sesión...");
+                                        loggedInMenu = false; // Salir del menú del cliente
+                                        break;
+                                    default:
+                                        Console.WriteLine("Opción inválida. Introduce una opción válida.");
+                                        break;
+                                }
+                            }
                         }
                         else
                         {

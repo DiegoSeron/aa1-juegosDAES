@@ -7,7 +7,7 @@
   </PropertyGroup>
 
 <ItemGroup>
-    <ProjectReference Include="D:\IvanBadia\aa1-juegosDAES\Models\Juegos.Models.csproj" />
+    <ProjectReference Include="..\Models\Juegos.Models.csproj" />
 </ItemGroup>
 
 </Project>

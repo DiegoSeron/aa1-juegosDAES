@@ -34,6 +34,26 @@ public class JuegoBusiness
             juegoData.AgregarCantidadAJuego(juegoId, cantidadAAgregar);
         }
 
+public void BuscarJuegosPorCategoria(string categoriaBusqueda)
+{
+    Dictionary<int, Juegos> juegosPorCategoria = juegoData.ObtenerTodosLosJuegos()
+        .Where(juego => juego.Value.categoria.ToLower() == categoriaBusqueda.ToLower())
+        .ToDictionary(pair => pair.Key, pair => pair.Value);
+
+    if (juegosPorCategoria.Count > 0)
+    {
+        Console.WriteLine($"Juegos encontrados en la categoría '{categoriaBusqueda}':");
+        foreach (var juego in juegosPorCategoria)
+        {
+            Console.WriteLine($"ID: {juego.Key}, Nombre: {juego.Value.nombreJuego}, Categoría: {juego.Value.categoria}");
+            // Mostrar otros detalles si es necesario
+        }
+    }
+    else
+    {
+        Console.WriteLine($"No se encontraron juegos en la categoría '{categoriaBusqueda}'.");
+    }
+}
 
 
 
