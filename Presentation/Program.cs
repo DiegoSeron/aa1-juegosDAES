@@ -103,7 +103,6 @@ while (running)
                 Console.Write("Selecciona una opción: ");
 
                 string opcionCliente = Console.ReadLine();
-
                 switch (opcionCliente)
                 {
                     case "1":
@@ -118,7 +117,7 @@ while (running)
                         {
                             loggedIn = true;
                             Console.WriteLine($"Inicio de sesión exitoso. Bienvenido, {clienteLogueado.Nombre}!");
-
+                            int idCliente = clienteLogueado.Id;
                             bool loggedInMenu = true;
 
                             while (loggedInMenu)
@@ -126,7 +125,8 @@ while (running)
                                 Console.WriteLine("Menú del cliente:");
                                 Console.WriteLine("1. Explorar juegos disponibles");
                                 Console.WriteLine("2. Buscar por categoria");
-                                Console.WriteLine("3. Cerrar sesión");
+                                Console.WriteLine("3. Añadir Saldo");
+                                Console.WriteLine("4. Cerrar sesión");
                                 Console.Write("Selecciona una opción: ");
 
                                 string opcionMenuCliente = Console.ReadLine();
@@ -145,6 +145,18 @@ while (running)
                                         juegoBusiness.BuscarJuegosPorCategoria(categoriaBusqueda); // Implementa esta función según tu lógica
                                         break;
                                     case "3":
+                                        Console.WriteLine("Ingresar dinero");
+                                        Console.Write("Ingrese la cantidad a depositar: ");
+                                        if (decimal.TryParse(Console.ReadLine(), out decimal cantidad))
+                                        {
+                                            clienteBusiness.IngresarDinero(idCliente, cantidad);
+                                        }
+                                        else
+                                        {
+                                            Console.WriteLine("Cantidad inválida. Introduzca un valor numérico válido.");
+                                        }
+                                        break;
+                                    case "4":
                                         Console.WriteLine("Cerrando sesión...");
                                         loggedInMenu = false; // Salir del menú del cliente
                                         break;
@@ -167,8 +179,37 @@ while (running)
                         Console.Write("Contraseña: ");
                         string nuevaContraseña = Console.ReadLine();
 
-                        clienteBusiness.RegistrarCliente(nombre, nuevoDni, nuevaContraseña);
+
+
+                        Console.Write("Fecha de nacimiento (YYYY-MM-DD): ");
+                        DateTime fechaNacimiento = DateTime.MinValue;
+                        bool formatoCorrectoFecha = false;
+
+                        while (!formatoCorrectoFecha)
+                        {
+                            Console.Write("Fecha de nacimiento (YYYY-MM-DD): ");
+                            if (DateTime.TryParse(Console.ReadLine(), out fechaNacimiento))
+                            {
+                                formatoCorrectoFecha = true;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Formato de fecha incorrecto. Introduce la fecha en el formato correcto (YYYY-MM-DD).");
+                            }
+                        }
+
+                        Console.Write("Saldo: ");
+                        if (decimal.TryParse(Console.ReadLine(), out decimal saldo))
+                        {
+                        }
+                        else
+                        {
+                            Console.WriteLine("Formato de saldo incorrecto. Introduce un valor numérico válido.");
+                        }
+
+                        clienteBusiness.RegistrarCliente(nombre, nuevoDni, nuevaContraseña, fechaNacimiento, saldo);
                         Console.WriteLine("Registro exitoso. Ahora puedes iniciar sesión.");
+
                         break;
                     case "3":
                         loggedIn = true; // Volver al menú principal

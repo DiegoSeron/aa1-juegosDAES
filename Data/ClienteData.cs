@@ -6,13 +6,6 @@ public class ClienteData
         private Dictionary<int, Clientes> clientes = new Dictionary<int, Clientes>();
         private int idCount = 0;
 
-        public ClienteData()
-        {
-            // Ejemplo: Agregar algunos clientes al iniciar la aplicación
-            AgregarCliente(new Clientes(++idCount, "Cliente1", "12345678A", "contraseña1"));
-            AgregarCliente(new Clientes(++idCount, "Cliente2", "87654321B", "contraseña2"));
-        }
-
         public Dictionary<int, Clientes> ObtenerTodosLosClientes()
         {
             return clientes;

@@ -11,10 +11,10 @@ public class ClienteBusiness
             return clienteData.ObtenerTodosLosClientes();
         }
 
-        public void RegistrarCliente(string nombre, string dni, string contraseña)
+        public void RegistrarCliente(string nombre, string dni, string contraseña, DateTime fechaNacimiento, decimal saldo)
         {
             int nuevoId = clienteData.ObtenerTodosLosClientes().Count + 1;
-            Clientes nuevoCliente = new Clientes(nuevoId, nombre, dni, contraseña);
+            Clientes nuevoCliente = new Clientes(nuevoId, nombre, dni, contraseña, fechaNacimiento, saldo);
             clienteData.AgregarCliente(nuevoCliente);
         }
 
@@ -22,6 +22,21 @@ public class ClienteBusiness
         {
             return clienteData.ObtenerClientePorDNI(dni);
         }
+
+public void IngresarDinero(int idCliente, decimal cantidad)
+{
+    Clientes cliente = clienteData.ObtenerClientePorId(idCliente);
+    if (cliente != null)
+    {
+        cliente.Saldo += cantidad;
+        // Lógica adicional si es necesaria
+        Console.WriteLine($"Se agregó {cantidad} al saldo del cliente {cliente.Nombre}. Nuevo saldo: {cliente.Saldo}");
+    }
+    else
+    {
+        Console.WriteLine("Cliente no encontrado.");
+    }
+}
     }
 
 
