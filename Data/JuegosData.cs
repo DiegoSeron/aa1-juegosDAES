@@ -17,7 +17,21 @@ public class JuegoData
             return juegos;
         }
 
+// Método para añadir cantidad a un juego
 
+        public void AgregarCantidadAJuego(int juegoId, int cantidadAAgregar)
+        {
+            if (juegos.ContainsKey(juegoId))
+            {
+                juegos[juegoId].cantidad += cantidadAAgregar;
+                Console.WriteLine($"Se añadieron {cantidadAAgregar} unidades al juego con ID {juegoId}.");
+            }
+            else
+            {
+                Console.WriteLine($"No se encontró ningún juego con ID {juegoId}.");
+            }
+        }
+ 
 
 
     }

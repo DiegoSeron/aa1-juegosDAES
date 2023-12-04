@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Vm6TH6RmnBHhJwyPGLoKv+nYk5oHXhbTocAAdLust3u+b3xTVmDZXeISgoNJAWe+lrB5DIO9J0FhggXcwLFmCQ==",
+  "dgSpecHash": "ocwdyZnrMVuSYONm2Qwq5FpmV/7E/fDxtQpPMHPdcRfHtmj3lYHdZFqWptBOS+AMycWlNb7iE0jCVelv6DG2QQ==",
   "success": true,
-  "projectFilePath": "D:\\www\\aa1-juegosDAES\\Models\\Juegos.Models.csproj",
+  "projectFilePath": "D:\\IvanBadia\\aa1-juegosDAES\\Models\\Juegos.Models.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

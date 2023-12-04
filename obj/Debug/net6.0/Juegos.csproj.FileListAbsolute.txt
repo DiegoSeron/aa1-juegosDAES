@@ -1,0 +1,5 @@
+D:\IvanBadia\aa1-juegosDAES\obj\Debug\net6.0\Juegos.csproj.AssemblyReference.cache
+D:\IvanBadia\aa1-juegosDAES\obj\Debug\net6.0\Juegos.GeneratedMSBuildEditorConfig.editorconfig
+D:\IvanBadia\aa1-juegosDAES\obj\Debug\net6.0\Juegos.AssemblyInfoInputs.cache
+D:\IvanBadia\aa1-juegosDAES\obj\Debug\net6.0\Juegos.AssemblyInfo.cs
+D:\IvanBadia\aa1-juegosDAES\obj\Debug\net6.0\Juegos.csproj.CoreCompileInputs.cache

@@ -12,7 +12,6 @@ bool running = true;
 
 while (running)
 {
-    Console.Clear();
     Console.WriteLine("¡Hola! ¿Qué eres?");
     Console.WriteLine("1. Admin");
     Console.WriteLine("2. Cliente");
@@ -28,11 +27,11 @@ while (running)
             bool submenu1 = true;
             while (submenu1)
             {
-                Console.Clear();
                 Console.WriteLine("Menú de Admin");
                 Console.WriteLine("1. Crear Juego");
                 Console.WriteLine("2. Ver todos los juegos");
-                Console.WriteLine("3. Volver al menú principal");
+                Console.WriteLine("3. Añadir stock en un juego");
+                Console.WriteLine("4. Volver al menú principal");
                 Console.Write("Selecciona una opción: ");
                 string opcionAdmin = Console.ReadLine();
 
@@ -50,8 +49,8 @@ while (running)
                         decimal precio = decimal.Parse(Console.ReadLine());
                         Console.Write("Pegi: ");
                         int pegi = int.Parse(Console.ReadLine());
-/*                         Console.Write("Fecha de lanzamiento (YYYY-MM-DD): ");
-                        DateTime fechaLanzamiento = DateTime.Parse(Console.ReadLine()); */
+                        /*                         Console.Write("Fecha de lanzamiento (YYYY-MM-DD): ");
+                                                DateTime fechaLanzamiento = DateTime.Parse(Console.ReadLine()); */
 
 
                         // Crear un nuevo juego utilizando el negocio de juegos
@@ -59,9 +58,30 @@ while (running)
                         Console.WriteLine("Nuevo juego creado exitosamente.");
                         break;
                     case "2":
-                                    juegoBusiness.MostrarTodosLosJuegos();
+                        juegoBusiness.MostrarTodosLosJuegos();
                         break;
+
                     case "3":
+                        Console.Write("Ingrese el ID del juego al que desea añadir cantidad: ");
+                        if (int.TryParse(Console.ReadLine(), out int juegoId))
+                        {
+                            Console.Write("Ingrese la cantidad que desea añadir: ");
+                            if (int.TryParse(Console.ReadLine(), out int cantidadAAgregar))
+                            {
+                                juegoBusiness.AgregarCantidadAJuego(juegoId, cantidadAAgregar);
+                            }
+                            else
+                            {
+                                Console.WriteLine("Cantidad inválida. Introduzca un número válido.");
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("ID inválido. Introduzca un número de ID válido.");
+                        }
+                        break;
+
+                    case "4":
                         submenu1 = false; // Volver al menú principal
                         break;
                     default:
@@ -69,15 +89,13 @@ while (running)
                         break;
                 }
 
-                Console.WriteLine("\nPresiona cualquier tecla para volver al menú de Admin...");
-                Console.ReadKey();
+
             }
             break;
         case "2":
             bool loggedIn = false;
             while (!loggedIn)
             {
-                Console.Clear();
                 Console.WriteLine("Menú de Cliente");
                 Console.WriteLine("1. Iniciar Sesión");
                 Console.WriteLine("2. Registrarse");
@@ -125,8 +143,6 @@ while (running)
                         break;
                 }
 
-                Console.WriteLine("\nPresiona cualquier tecla para continuar...");
-                Console.ReadKey();
             }
             break;
         case "3":
@@ -138,8 +154,6 @@ while (running)
             break;
     }
 
-    Console.WriteLine("\nPresiona cualquier tecla para continuar...");
-    Console.ReadKey();
 }
 
 
