@@ -17,7 +17,6 @@ public class JuegoData
             return juegos;
         }
 
-// Método para añadir cantidad a un juego
 
         public void AgregarCantidadAJuego(int juegoId, int cantidadAAgregar)
         {

@@ -3,20 +3,27 @@
 using Juegos.Business;
 using Juegos.Data;
 using Juegos.Models;
-using Juegos.Presentation;
 
 ClienteBusiness clienteBusiness = new ClienteBusiness();
 JuegoBusiness juegoBusiness = new JuegoBusiness();
 
 bool running = true;
 
+juegoBusiness.CrearJuego("The Witcher 3", "RPG", 10, 29.99m, 18);
+juegoBusiness.CrearJuego("GTA", "RPG", 10, 29.99m, 18);
+juegoBusiness.CrearJuego( "The Witcher 3", "Aventura", 50, 29.99m, 18);
+juegoBusiness.CrearJuego( "FIFA 22", "Deportes", 100, 49.99m, 3);
+juegoBusiness.CrearJuego( "Cyberpunk 2077", "RPG", 30, 59.99m, 18);
+
+
+
 while (running)
 {
-    Console.WriteLine("¡Hola! ¿Qué eres?");
+    Console.WriteLine("\n¡Hola! ¿Qué eres?");
     Console.WriteLine("1. Admin");
     Console.WriteLine("2. Cliente");
     Console.WriteLine("3. Salir");
-    Console.Write("Selecciona una opción: ");
+    Console.WriteLine("Selecciona una opción: ");
 
     string opcion = Console.ReadLine();
 
@@ -27,12 +34,12 @@ while (running)
             bool submenu1 = true;
             while (submenu1)
             {
-                Console.WriteLine("Menú de Admin");
+                Console.WriteLine("\nMenú de Admin");
                 Console.WriteLine("1. Crear Juego");
                 Console.WriteLine("2. Ver todos los juegos");
                 Console.WriteLine("3. Añadir stock en un juego");
                 Console.WriteLine("4. Volver al menú principal");
-                Console.Write("Selecciona una opción: ");
+                Console.WriteLine("Selecciona una opción: ");
                 string opcionAdmin = Console.ReadLine();
 
                 switch (opcionAdmin)
@@ -47,7 +54,7 @@ while (running)
                         int cantidad = int.Parse(Console.ReadLine());
                         Console.Write("Precio: ");
                         decimal precio = decimal.Parse(Console.ReadLine());
-                        Console.Write("Pegi: ");
+                        Console.WriteLine("Pegi: ");
                         int pegi = int.Parse(Console.ReadLine());
                         /*                         Console.Write("Fecha de lanzamiento (YYYY-MM-DD): ");
                                                 DateTime fechaLanzamiento = DateTime.Parse(Console.ReadLine()); */
@@ -62,7 +69,7 @@ while (running)
                         break;
 
                     case "3":
-                        Console.Write("Ingrese el ID del juego al que desea añadir cantidad: ");
+                        Console.WriteLine("Ingrese el ID del juego al que desea añadir cantidad: ");
                         if (int.TryParse(Console.ReadLine(), out int juegoId))
                         {
                             Console.Write("Ingrese la cantidad que desea añadir: ");
@@ -96,19 +103,19 @@ while (running)
             bool loggedIn = false;
             while (!loggedIn)
             {
-                Console.WriteLine("Menú de Cliente");
+                Console.WriteLine("\nMenú de Cliente");
                 Console.WriteLine("1. Iniciar Sesión");
                 Console.WriteLine("2. Registrarse");
                 Console.WriteLine("3. Volver");
-                Console.Write("Selecciona una opción: ");
+                Console.WriteLine("Selecciona una opción: ");
 
                 string opcionCliente = Console.ReadLine();
                 switch (opcionCliente)
                 {
                     case "1":
-                        Console.Write("DNI: ");
+                        Console.WriteLine("DNI: ");
                         string dni = Console.ReadLine();
-                        Console.Write("Contraseña: ");
+                        Console.WriteLine("Contraseña: ");
                         string contraseña = Console.ReadLine();
 
                         Clientes clienteLogueado = clienteBusiness.IniciarSesion(dni, contraseña);
@@ -122,12 +129,14 @@ while (running)
 
                             while (loggedInMenu)
                             {
-                                Console.WriteLine("Menú del cliente:");
+                                Console.WriteLine("\nMenú del cliente:");
                                 Console.WriteLine("1. Explorar juegos disponibles");
                                 Console.WriteLine("2. Buscar por categoria");
-                                Console.WriteLine("3. Añadir Saldo");
-                                Console.WriteLine("4. Cerrar sesión");
-                                Console.Write("Selecciona una opción: ");
+                                Console.WriteLine("3. Comprar");
+                                Console.WriteLine("4. Añadir Saldo");
+                                Console.WriteLine("5. Ver juegos coprados");
+                                Console.WriteLine("6. Cerrar sesión");
+                                Console.WriteLine("Selecciona una opción: ");
 
                                 string opcionMenuCliente = Console.ReadLine();
 
@@ -145,8 +154,68 @@ while (running)
                                         juegoBusiness.BuscarJuegosPorCategoria(categoriaBusqueda); // Implementa esta función según tu lógica
                                         break;
                                     case "3":
+                                        Console.WriteLine("Ingrese el ID del juego que desea comprar:");
+                                        if (int.TryParse(Console.ReadLine(), out int juegoId))
+                                        {
+                                            // Obtener el juego por su ID
+                                            Juegos.Models.Juegos juegoSeleccionado = juegoBusiness.ObtenerJuegoPorId(juegoId);
+
+                                            if (juegoSeleccionado != null)
+                                            {
+                                                // Verificar si el cliente tiene suficiente saldo para comprar el juego
+
+                                                int edadCliente = DateTime.Now.Year - clienteLogueado.FechaNacimiento.Year;
+
+                                                if (edadCliente > juegoSeleccionado.pegi)
+                                                {
+                                                    if (clienteLogueado.Saldo >= juegoSeleccionado.precio)
+                                                    {
+                                                        if (juegoSeleccionado.cantidad > 0)
+                                                        {
+                                                            // Restar el precio del juego del saldo del cliente
+                                                            clienteLogueado.Saldo -= juegoSeleccionado.precio;
+
+                                                            // Reducir la cantidad disponible del juego
+                                                            juegoSeleccionado.cantidad--;
+
+                                                            // Agregar el juego al carrito de compras del cliente
+                                                            clienteLogueado.AgregarJuegoAlCarrito(juegoSeleccionado);
+
+                                                            // Actualizar el precio total del carrito
+                                                            clienteLogueado.ActualizarPrecioTotal(juegoSeleccionado.precio);
+
+                                                            Console.WriteLine($"Compra exitosa. Has adquirido: {juegoSeleccionado.nombreJuego}");
+                                                        }
+                                                        else
+                                                        {
+                                                            Console.WriteLine("No hay stock de este juego");
+
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        Console.WriteLine("No tienes saldo suficiente para comprar este juego");
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    Console.WriteLine("No tienes la edad suficiente para comprar este juego.");
+                                                }
+                                            }
+                                            else
+                                            {
+                                                Console.WriteLine("ID de juego no válido. Introduce un ID existente.");
+                                            }
+                                        }
+                                        else
+                                        {
+                                            Console.WriteLine("ID inválido. Introduce un número de ID válido.");
+                                        }
+                                        break;
+
+                                    case "4":
                                         Console.WriteLine("Ingresar dinero");
-                                        Console.Write("Ingrese la cantidad a depositar: ");
+                                        Console.WriteLine("Ingrese la cantidad a depositar: ");
                                         if (decimal.TryParse(Console.ReadLine(), out decimal cantidad))
                                         {
                                             clienteBusiness.IngresarDinero(idCliente, cantidad);
@@ -156,7 +225,11 @@ while (running)
                                             Console.WriteLine("Cantidad inválida. Introduzca un valor numérico válido.");
                                         }
                                         break;
-                                    case "4":
+                                    case "5":
+                                        clienteBusiness.MostrarJuegosComprados(idCliente); // Llama al método para mostrar los juegos comprados por el cliente
+                                        break;
+
+                                    case "6":
                                         Console.WriteLine("Cerrando sesión...");
                                         loggedInMenu = false; // Salir del menú del cliente
                                         break;
@@ -172,22 +245,21 @@ while (running)
                         }
                         break;
                     case "2":
-                        Console.Write("Nombre: ");
+                        Console.WriteLine("Nombre: ");
                         string nombre = Console.ReadLine();
-                        Console.Write("DNI: ");
+                        Console.WriteLine("DNI: ");
                         string nuevoDni = Console.ReadLine();
-                        Console.Write("Contraseña: ");
+                        Console.WriteLine("Contraseña: ");
                         string nuevaContraseña = Console.ReadLine();
 
 
 
-                        Console.Write("Fecha de nacimiento (YYYY-MM-DD): ");
                         DateTime fechaNacimiento = DateTime.MinValue;
                         bool formatoCorrectoFecha = false;
 
                         while (!formatoCorrectoFecha)
                         {
-                            Console.Write("Fecha de nacimiento (YYYY-MM-DD): ");
+                            Console.WriteLine("Fecha de nacimiento (YYYY-MM-DD): ");
                             if (DateTime.TryParse(Console.ReadLine(), out fechaNacimiento))
                             {
                                 formatoCorrectoFecha = true;
@@ -198,7 +270,7 @@ while (running)
                             }
                         }
 
-                        Console.Write("Saldo: ");
+                        Console.WriteLine("Saldo: ");
                         if (decimal.TryParse(Console.ReadLine(), out decimal saldo))
                         {
                         }
@@ -231,85 +303,3 @@ while (running)
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-/*  ClienteBusiness clienteBusiness = new ClienteBusiness();
-    bool running = true;
-
-    while (running)
-    {
-        Console.Clear();
-        Console.WriteLine("Menú Cliente");
-        Console.WriteLine("1. Iniciar Sesión");
-        Console.WriteLine("2. Registrarse");
-        Console.WriteLine("3. Salir");
-        Console.Write("Selecciona una opción: ");
-
-        string opcion = Console.ReadLine();
-
-        switch (opcion)
-        {
-            case "1":
-                Console.Write("DNI: ");
-                string dni = Console.ReadLine();
-                Console.Write("Contraseña: ");
-                string contraseña = Console.ReadLine();
-
-                Cliente clienteLogueado = clienteBusiness.IniciarSesion(dni, contraseña);
-
-                if (clienteLogueado != null)
-                {
-                    Console.WriteLine($"Inicio de sesión exitoso. Bienvenido, {clienteLogueado.Nombre}!");
-                }
-                else
-                {
-                    Console.WriteLine("Credenciales inválidas. Inténtalo de nuevo.");
-                }
-                break;
-            case "2":
-                Console.Write("Nombre: ");
-                string nombre = Console.ReadLine();
-                Console.Write("DNI: ");
-                string nuevoDni = Console.ReadLine();
-                Console.Write("Contraseña: ");
-                string nuevaContraseña = Console.ReadLine();
-
-                clienteBusiness.RegistrarCliente(nombre, nuevoDni, nuevaContraseña);
-                Console.WriteLine("Registro exitoso. Ahora puedes iniciar sesión.");
-                break;
-            case "3":
-                Console.WriteLine("Saliendo del programa...");
-                running = false;
-                break;
-            default:
-                Console.WriteLine("Opción inválida. Introduce una opción válida.");
-                break;
-        }
-
-        Console.WriteLine("\nPresiona cualquier tecla para continuar...");
-        Console.ReadKey();
-    }
-} */
-
-/* ClienteBusiness clienteBusiness = new ClienteBusiness();
-
-// Crear usuarios
-clienteBusiness.CrearNuevoCliente(1, "Usuario1");
-clienteBusiness.CrearNuevoCliente(2, "Usuario2");
-// Puedes agregar más usuarios según necesites
-
-// Mostrar usuarios por consola
-Console.WriteLine("Lista de Usuarios:");
-foreach (Clientes cliente in clienteBusiness.ObtenerTodosLosClientes())
-{
-    Console.WriteLine($"ID: {cliente.Id}, Nombre: {cliente.Nombre}");
-}
-Console.WriteLine("Hello, World!"); */

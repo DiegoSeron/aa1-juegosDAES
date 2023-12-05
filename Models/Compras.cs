@@ -1,19 +1,23 @@
 namespace Juegos.Models;
 
-public class Compras 
+public class Compras
 {
-    protected int idCompra {get;}
-    protected DateTime fechaDeCompra {get;}
-    protected string idComprador {get; private set;}
-    protected int idJuegoComprado {get; private set;}
-    protected List<Compras> cestaCompra {get; set;} = new List<Compras>();
-    protected decimal precioTotal {get;}
+    private static int contadorCompras = 1;
 
-    int idCompraSeed = 1;
-    public Compras(Clientes clientes, Juegos juegos){
-        idCompra = idCompraSeed++;
-        fechaDeCompra = DateTime.Now;
-/*         idComprador = clientes.Dni;
- */        idJuegoComprado = juegos.idJuego;
+    public int Id { get; private set; }
+    public Clientes Cliente { get; set; }
+    public Juegos JuegoComprado { get; set; }
+    public decimal PrecioTotal { get; set; }
+    public DateTime FechaCompra { get; set; }
+
+    public Compras(Clientes cliente, Juegos juegoComprado, decimal precioTotal, DateTime fechaCompra)
+    {
+        Id = contadorCompras++;
+        Cliente = cliente;
+        JuegoComprado = juegoComprado;
+        PrecioTotal = precioTotal;
+        FechaCompra = fechaCompra;
     }
+
+
 }
