@@ -32,11 +32,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "d:\\www\\aa1-juegosDAES\\Data\\Juegos.Data.csproj",
+      "projectUniqueName": "D:\\www\\aa1-juegosDAES\\Data\\Juegos.Data.csproj",
       "projectName": "Juegos.Data",
-      "projectPath": "d:\\www\\aa1-juegosDAES\\Data\\Juegos.Data.csproj",
+      "projectPath": "D:\\www\\aa1-juegosDAES\\Data\\Juegos.Data.csproj",
       "packagesPath": "C:\\Users\\IVÁN\\.nuget\\packages\\",
-      "outputPath": "d:\\www\\aa1-juegosDAES\\Data\\obj\\",
+      "outputPath": "D:\\www\\aa1-juegosDAES\\Data\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\IVÁN\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -53,8 +53,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "d:\\www\\aa1-juegosDAES\\Models\\Juegos.Models.csproj": {
-              "projectPath": "d:\\www\\aa1-juegosDAES\\Models\\Juegos.Models.csproj"
+            "D:\\www\\aa1-juegosDAES\\Models\\Juegos.Models.csproj": {
+              "projectPath": "D:\\www\\aa1-juegosDAES\\Models\\Juegos.Models.csproj"
             }
           }
         }

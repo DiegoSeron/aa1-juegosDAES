@@ -3,3 +3,8 @@ D:\IvanBadia\aa1-juegosDAES\obj\Debug\net6.0\Juegos.GeneratedMSBuildEditorConfig
 D:\IvanBadia\aa1-juegosDAES\obj\Debug\net6.0\Juegos.AssemblyInfoInputs.cache
 D:\IvanBadia\aa1-juegosDAES\obj\Debug\net6.0\Juegos.AssemblyInfo.cs
 D:\IvanBadia\aa1-juegosDAES\obj\Debug\net6.0\Juegos.csproj.CoreCompileInputs.cache
+D:\www\aa1-juegosDAES\obj\Debug\net6.0\Juegos.csproj.AssemblyReference.cache
+D:\www\aa1-juegosDAES\obj\Debug\net6.0\Juegos.GeneratedMSBuildEditorConfig.editorconfig
+D:\www\aa1-juegosDAES\obj\Debug\net6.0\Juegos.AssemblyInfoInputs.cache
+D:\www\aa1-juegosDAES\obj\Debug\net6.0\Juegos.AssemblyInfo.cs
+D:\www\aa1-juegosDAES\obj\Debug\net6.0\Juegos.csproj.CoreCompileInputs.cache

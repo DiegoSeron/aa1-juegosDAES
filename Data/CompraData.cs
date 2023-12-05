@@ -3,17 +3,13 @@ namespace Juegos.Data;
 using Juegos.Models;
 public class CompraData
 {
-private List<Compras> listaCompras = new List<Compras>();
+private List<Compra> listaCompras = new List<Compra>();
 
-        public void AgregarCompra(Compras compra)
+        public void AgregarCompra(Compra compra)
         {
             listaCompras.Add(compra);
         }
 
-        public List<Compras> ObtenerComprasPorCliente(int idCliente)
-        {
-            return listaCompras.Where(compra => compra.Cliente.Id == idCliente).ToList();
-        }
 
 }
 

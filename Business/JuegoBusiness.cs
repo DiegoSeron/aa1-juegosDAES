@@ -5,38 +5,37 @@ using Juegos.Models;
 public class JuegoBusiness
 {
     private JuegoData juegoData = new JuegoData();
-    private Dictionary<int, Juegos> juegos = new Dictionary<int, Juegos>();
+    private Dictionary<int, Juego> juegos = new Dictionary<int, Juego>();
 
     public void CrearJuego(string nombreJuego, string categoria, int cantidad, decimal precio, int pegi)
     {
-        Juegos nuevoJuego = new Juegos(0, nombreJuego, categoria, cantidad, precio, pegi);
+        Juego nuevoJuego = new Juego(0, nombreJuego, categoria, cantidad, precio, pegi);
         juegoData.AgregarJuego(nuevoJuego);
     }
 
-    public Dictionary<int, Juegos> ObtenerTodosLosJuegos()
+    public Dictionary<int, Juego> ObtenerJuegos()
     {
-        return juegoData.ObtenerTodosLosJuegos();
+        return juegoData.ObtenerJuegos();
     }
-    public void MostrarTodosLosJuegos()
+    public void MostrarJuegos()
     {
-        Dictionary<int, Juegos> juegos = ObtenerTodosLosJuegos();
+        Dictionary<int, Juego> juegos = ObtenerJuegos();
 
         Console.WriteLine("Lista de Juegos:");
         foreach (var juego in juegos)
         {
             Console.WriteLine($"ID: {juego.Key}, Nombre: {juego.Value.nombreJuego}, Categoría: {juego.Value.categoria}, Cantidad: {juego.Value.cantidad}, Precio: {juego.Value.precio}, Pegi: {juego.Value.pegi}");
-            // Mostrar otros detalles si es necesario
         }
     }
 
-    public void AgregarCantidadAJuego(int juegoId, int cantidadAAgregar)
+    public void AgregarCantidad(int juegoId, int cantidadAAgregar)
     {
-        juegoData.AgregarCantidadAJuego(juegoId, cantidadAAgregar);
+        juegoData.AgregarCantidad(juegoId, cantidadAAgregar);
     }
 
-    public void BuscarJuegosPorCategoria(string categoriaBusqueda)
+    public void BuscarJuegosCategoria(string categoriaBusqueda)
     {
-        Dictionary<int, Juegos> juegosPorCategoria = juegoData.ObtenerTodosLosJuegos()
+        Dictionary<int, Juego> juegosPorCategoria = juegoData.ObtenerJuegos()
             .Where(juego => juego.Value.categoria.ToLower() == categoriaBusqueda.ToLower())
             .ToDictionary(pair => pair.Key, pair => pair.Value);
 
@@ -45,8 +44,7 @@ public class JuegoBusiness
             Console.WriteLine($"Juegos encontrados en la categoría '{categoriaBusqueda}':");
             foreach (var juego in juegosPorCategoria)
             {
-                Console.WriteLine($"ID: {juego.Key}, Nombre: {juego.Value.nombreJuego}, Categoría: {juego.Value.categoria}");
-                // Mostrar otros detalles si es necesario
+            Console.WriteLine($"ID: {juego.Key}, Nombre: {juego.Value.nombreJuego}, Categoría: {juego.Value.categoria}, Cantidad: {juego.Value.cantidad}, Precio: {juego.Value.precio}, Pegi: {juego.Value.pegi}");
             }
         }
         else
@@ -55,9 +53,9 @@ public class JuegoBusiness
         }
     }
 
-    public Juegos ObtenerJuegoPorId(int idJuego)
+    public Juego ObtenerJuegoId(int idJuego)
     {
-        Dictionary<int, Juegos> juegos = ObtenerTodosLosJuegos();
+        Dictionary<int, Juego> juegos = ObtenerJuegos();
 
         if (juegos.ContainsKey(idJuego))
         {

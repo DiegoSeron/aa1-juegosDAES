@@ -8,30 +8,29 @@ public class ClienteBusiness
     private CompraData compraData = new CompraData();
 
 
-    public Dictionary<int, Clientes> ObtenerTodosLosClientes()
+    public Dictionary<int, Cliente> ObtenerClientes()
     {
-        return clienteData.ObtenerTodosLosClientes();
+        return clienteData.ObtenerClientes();
     }
 
     public void RegistrarCliente(string nombre, string dni, string contraseña, DateTime fechaNacimiento, decimal saldo)
     {
-        int nuevoId = clienteData.ObtenerTodosLosClientes().Count + 1;
-        Clientes nuevoCliente = new Clientes(nuevoId, nombre, dni, contraseña, fechaNacimiento, saldo);
+        int nuevoId = clienteData.ObtenerClientes().Count + 1;
+        Cliente nuevoCliente = new Cliente(nuevoId, nombre, dni, contraseña, fechaNacimiento, saldo);
         clienteData.AgregarCliente(nuevoCliente);
     }
 
-    public Clientes IniciarSesion(string dni, string contraseña)
+    public Cliente IniciarSesion(string dni, string contraseña)
     {
-        return clienteData.ObtenerClientePorDNI(dni);
+        return clienteData.ObtenerClienteDNI(dni);
     }
 
     public void IngresarDinero(int idCliente, decimal cantidad)
     {
-        Clientes cliente = clienteData.ObtenerClientePorId(idCliente);
+        Cliente cliente = clienteData.ObtenerClientePId(idCliente);
         if (cliente != null)
         {
             cliente.Saldo += cantidad;
-            // Lógica adicional si es necesaria
             Console.WriteLine($"Se agregó {cantidad} al saldo del cliente {cliente.Nombre}. Nuevo saldo: {cliente.Saldo}");
         }
         else
@@ -41,40 +40,15 @@ public class ClienteBusiness
     }
 
 
-       public void ComprarJuego(Clientes cliente, Juegos juegoComprado, decimal precioTotal)
+       public void ComprarJuego(Cliente cliente, Juego juegoComprado, decimal precioTotal)
         {
-            DateTime fechaCompra = DateTime.Now; // Fecha actual de la compra
+            DateTime fechaCompra = DateTime.Now; 
             Console.WriteLine($"Juego comprado: {juegoComprado.nombreJuego}");
             Console.WriteLine($"Precio total: {precioTotal}");
             Console.WriteLine($"Fecha de compra: {fechaCompra}");
 
-            // Aquí puedes restar el precio del juego al saldo del cliente si es necesario
         }
 
-
-    public void MostrarJuegosComprados(int idCliente)
-    {
-        List<Compras> comprasCliente = compraData.ObtenerComprasPorCliente(idCliente);
-
-        if (comprasCliente.Count > 0)
-        {
-            Console.WriteLine($"Juegos comprados por el cliente con ID {idCliente}:");
-            foreach (Compras compra in comprasCliente)
-            {
-                Console.WriteLine($"ID de compra: {compra.Id}");
-                Console.WriteLine($"Fecha de compra: {compra.FechaCompra}");
-                Console.WriteLine($"Juego comprado: {compra.JuegoComprado.nombreJuego}"); // Mostrar el nombre del juego comprado
-                Console.WriteLine($"Precio del juego: {compra.PrecioTotal}");
-                // Otros detalles de la compra si es necesario
-                Console.WriteLine("---------------------------------------");
-            }
-        }
-        else
-        {
-            Console.WriteLine("El cliente no ha realizado ninguna compra.");
-        }
-
-    }
 }
 
 

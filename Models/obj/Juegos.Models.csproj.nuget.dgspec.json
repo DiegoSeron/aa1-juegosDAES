@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "d:\\www\\aa1-juegosDAES\\Models\\Juegos.Models.csproj": {}
+    "D:\\www\\aa1-juegosDAES\\Models\\Juegos.Models.csproj": {}
   },
   "projects": {
-    "d:\\www\\aa1-juegosDAES\\Models\\Juegos.Models.csproj": {
+    "D:\\www\\aa1-juegosDAES\\Models\\Juegos.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\www\\aa1-juegosDAES\\Models\\Juegos.Models.csproj",
+        "projectUniqueName": "D:\\www\\aa1-juegosDAES\\Models\\Juegos.Models.csproj",
         "projectName": "Juegos.Models",
-        "projectPath": "d:\\www\\aa1-juegosDAES\\Models\\Juegos.Models.csproj",
+        "projectPath": "D:\\www\\aa1-juegosDAES\\Models\\Juegos.Models.csproj",
         "packagesPath": "C:\\Users\\IVÁN\\.nuget\\packages\\",
-        "outputPath": "d:\\www\\aa1-juegosDAES\\Models\\obj\\",
+        "outputPath": "D:\\www\\aa1-juegosDAES\\Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\IVÁN\\AppData\\Roaming\\NuGet\\NuGet.Config",

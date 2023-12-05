@@ -1,5 +1,5 @@
 ﻿namespace Juegos.Models;
-public class Clientes
+public class Cliente
 {
 
     public int Id { get; set; }
@@ -8,10 +8,9 @@ public class Clientes
     public string Contraseña { get; set; }
     public DateTime FechaNacimiento { get; set; }
     public decimal Saldo { get; set; }
-    // Puedes agregar más propiedades según sea necesario
-    public List<Compras> ComprasRealizadas { get; set; }
+    public List<Compra> ComprasRealizadas { get; set; }
 
-    public Clientes(int id, string nombre, string dni, string contraseña, DateTime fechaNacimiento, decimal saldo)
+    public Cliente(int id, string nombre, string dni, string contraseña, DateTime fechaNacimiento, decimal saldo)
     {
         Id = id;
         Nombre = nombre;
@@ -20,17 +19,12 @@ public class Clientes
         FechaNacimiento = fechaNacimiento;
         Saldo = saldo;
 
-        ComprasRealizadas = new List<Compras>();
+        ComprasRealizadas = new List<Compra>();
 
     }
 
-public List<Juegos> CarritoCompras { get; set; } = new List<Juegos>();
+public List<Juego> CarritoCompras { get; set; } = new List<Juego>();
     public decimal PrecioTotalCarrito { get; set; } = 0;
-
-    public void AgregarJuegoAlCarrito(Juegos juego)
-    {
-        CarritoCompras.Add(juego);
-    }
 
     public void ActualizarPrecioTotal(decimal precioJuego)
     {

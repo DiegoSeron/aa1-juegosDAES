@@ -3,20 +3,20 @@
 using Juegos.Models;
 public class ClienteData
 {
-    private Dictionary<int, Clientes> clientes = new Dictionary<int, Clientes>();
+    private Dictionary<int, Cliente> clientes = new Dictionary<int, Cliente>();
     private int idCount = 0;
 
-    public Dictionary<int, Clientes> ObtenerTodosLosClientes()
+    public Dictionary<int, Cliente> ObtenerClientes()
     {
         return clientes;
     }
 
-    public void AgregarCliente(Clientes cliente)
+    public void AgregarCliente(Cliente cliente)
     {
         clientes.Add(cliente.Id, cliente);
     }
 
-    public Clientes ObtenerClientePorId(int id)
+    public Cliente ObtenerClientePId(int id)
     {
         if (clientes.ContainsKey(id))
         {
@@ -25,9 +25,9 @@ public class ClienteData
         return null;
     }
 
-    public Clientes ObtenerClientePorDNI(string dni)
+    public Cliente ObtenerClienteDNI(string dni)
     {
-        foreach (KeyValuePair<int, Clientes> i in clientes)
+        foreach (KeyValuePair<int, Cliente> i in clientes)
         {
             if (i.Value.DNI == dni)
             {

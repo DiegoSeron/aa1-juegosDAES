@@ -71,11 +71,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "d:\\www\\aa1-juegosDAES\\Presentation\\Juegos.Presentation.csproj",
+      "projectUniqueName": "D:\\www\\aa1-juegosDAES\\Presentation\\Juegos.Presentation.csproj",
       "projectName": "Juegos.Presentation",
-      "projectPath": "d:\\www\\aa1-juegosDAES\\Presentation\\Juegos.Presentation.csproj",
+      "projectPath": "D:\\www\\aa1-juegosDAES\\Presentation\\Juegos.Presentation.csproj",
       "packagesPath": "C:\\Users\\IVÁN\\.nuget\\packages\\",
-      "outputPath": "d:\\www\\aa1-juegosDAES\\Presentation\\obj\\",
+      "outputPath": "D:\\www\\aa1-juegosDAES\\Presentation\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\IVÁN\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -92,14 +92,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "d:\\www\\aa1-juegosDAES\\Business\\Juegos.Business.csproj": {
-              "projectPath": "d:\\www\\aa1-juegosDAES\\Business\\Juegos.Business.csproj"
+            "D:\\www\\aa1-juegosDAES\\Business\\Juegos.Business.csproj": {
+              "projectPath": "D:\\www\\aa1-juegosDAES\\Business\\Juegos.Business.csproj"
             },
-            "d:\\www\\aa1-juegosDAES\\Data\\Juegos.Data.csproj": {
-              "projectPath": "d:\\www\\aa1-juegosDAES\\Data\\Juegos.Data.csproj"
+            "D:\\www\\aa1-juegosDAES\\Data\\Juegos.Data.csproj": {
+              "projectPath": "D:\\www\\aa1-juegosDAES\\Data\\Juegos.Data.csproj"
             },
-            "d:\\www\\aa1-juegosDAES\\Models\\Juegos.Models.csproj": {
-              "projectPath": "d:\\www\\aa1-juegosDAES\\Models\\Juegos.Models.csproj"
+            "D:\\www\\aa1-juegosDAES\\Models\\Juegos.Models.csproj": {
+              "projectPath": "D:\\www\\aa1-juegosDAES\\Models\\Juegos.Models.csproj"
             }
           }
         }
